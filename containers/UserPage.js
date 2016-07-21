@@ -82,7 +82,7 @@ function mapStateToProps (state, ownProps) {
   const starredRepos = starredPagination.ids.map(id => repos[id])
   const starredRepoOwners = starredRepos.map(repo => users[repo.owner])
 
-  const {
+  return {
     login,
     starredRepos,
     starredRepoOwners,
