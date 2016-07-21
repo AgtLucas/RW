@@ -49,3 +49,5 @@ const rootReducer = combineReducers({
   errorMessage,
   routing
 })
+
+export default rootReducer
