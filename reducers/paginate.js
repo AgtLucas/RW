@@ -1,7 +1,7 @@
 import merge from 'lodash/merge'
 import union from 'lodash/union'
 
-export default paginate = ({ types, mapActionToKey }) => {
+const paginate = ({ types, mapActionToKey }) => {
   if (!Array.isArray(types) || types.length !== 3) {
     throw new Error('Expected types to be an array of three elements.')
   }
@@ -43,7 +43,7 @@ export default paginate = ({ types, mapActionToKey }) => {
     }
   }
 
-  return updatePaginationByKey = (state = {}, action) => {
+  const updatePaginationByKey = (state = {}, action) => {
     switch (action.type) {
       case requestType:
       case successType:
@@ -59,4 +59,8 @@ export default paginate = ({ types, mapActionToKey }) => {
         return state
     }
   }
+
+  return updatePaginationByKey
 }
+
+export default paginate
